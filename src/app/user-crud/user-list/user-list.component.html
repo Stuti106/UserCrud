@@ -1,0 +1,30 @@
+<div class="row" style="padding-left: 5px; padding-right: 5px;">
+    <br>
+    <table class="tabStyle">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Edit 
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+        <tr *ngFor="let usr of usrs">
+            <td>{{usr.name}}</td>
+            <td>{{usr.phone}}</td>
+            <td>{{usr.address}}</td>
+            <td><a [routerLink]="['/users-edit', usr.id]" class="btn btn-primary">Edit</a></td>
+            <td><button (click)="deleteUsers(usr.id)" class="btn btn-primary">Delete</button></td>
+        </tr>
+    </table>
+    <br>
+</div>
